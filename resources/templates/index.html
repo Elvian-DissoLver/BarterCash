@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head th:replace="layout :: header">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-inverse bg-inverse" th:replace="layout :: login">
+
+</div>
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">HacktivCASH</h1>
+        <p class="lead text-muted"> is obsessed with creating and sharing unique and authentic product experiences that stimulate our fans' imaginations and fuel their geek core.</p>
+        <p>
+            <a href="#" class="btn btn-primary">Browse our collection</a>
+            <a href="/add" class="btn btn-secondary">Contact us</a>
+        </p>
+    </div>
+</section>
+
+<div class="album text-muted">
+    <div class="container">
+
+        <div class="row" th:each="product : ${product}" th:remove="tag">
+
+            <div class="card">
+                <img class="img-fluid" src=<c:url value=${product.image}" alt="Card image cap">
+                <p class="card-text" th:text="${product.description}"></p>
+                <div class="text-center">
+                    <a href="/detail/${ id }" class="btn btn-warning">Lihat</a>
+                    <a href="#" class="btn btn-secondary">Masukkan ke keranjang</a>
+                </div>
+            </div>
+            {{/each}}
+            <! -- END of Cards-->
+        </div >
+
+    </div >
+</div>
+<footer class="text-muted" th:replace="layout :: footer">
+
+</footer>
+</body>
+</html>

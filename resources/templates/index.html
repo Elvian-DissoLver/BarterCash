@@ -27,7 +27,8 @@
         <div class="row" th:each="product : ${product}" th:remove="tag">
 
             <div class="card">
-                <img class="img-fluid" src=<c:url value=${product.image}" alt="Card image cap">
+                <!--<img class="img-fluid" src=<c:url value=${product.image}" alt="Card image cap">
+                <!--/*@thymesVar id="product" type=""*/-->
                 <p class="card-text" th:text="${product.description}"></p>
                 <div class="text-center">
                     <a href="/detail/${ id }" class="btn btn-warning">Lihat</a>
